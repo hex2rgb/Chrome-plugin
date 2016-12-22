@@ -6,7 +6,7 @@
 - icon.png 是用来显示右上角的小图标图片大熊啊是19X19,
 - mystyles.css 当百度页面加载后会从总读取样式,即将背景色修改为 pink
 - test.js 用来操作百度页面中的 dom ,
--  
+- popup.html点击图标会出来一个布局页面这个页面暂时还没有用到
 #### manifest.jsonp 配置文件
 ```
 {  
