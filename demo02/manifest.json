@@ -1,8 +1,8 @@
 {  
     "manifest_version": 2,
-    "name": "测试插件",
+    "name": "aa测试插件",
     "version": "1.0",
-    "description": "插件eeeee",
+    "description": "插件2222",
     "browser_action": {
         "default_icon": "icon.png",
         "default_title": "click",
@@ -10,18 +10,19 @@
 
     },
     "permissions": [
-        "http://*/",
+        "<all_urls>",//匹配所有种类的url(ftp,http...)
         "bookmarks",
         "tabs",
         "history"
     ],
     "content_scripts": [{
-        "matches": ["https://www.baidu.com/"],
+        "matches": ["<all_urls>"],//匹配到所有的url地址是加载下面的脚本、样式
         "css": ["mystyles.css"],
-        "js": ["test.js"]
+        "js": ["test.js","jquery.min.js"],
+        "run_at":"document_end"
     }],
     "background": {
         "scripts": ["background.js"],
-        "persistent": false
+        "persistent": false //使用事件页面
     }
 }
