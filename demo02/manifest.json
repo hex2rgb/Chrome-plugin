@@ -1,28 +1,28 @@
 {  
     "manifest_version": 2,
-    "name": "aa测试插件",
+    "name": "aa测试插件33",
     "version": "1.0",
-    "description": "插件2222",
+    "description": "插件2222ee2",
     "browser_action": {
-        "default_icon": "icon.png",
+        "default_icon": "./icon/icon.png",
         "default_title": "click",
-        "default_popup": "popup.html"
+        "default_popup": "./pages/popup.html"
 
     },
     "permissions": [
         "<all_urls>",//匹配所有种类的url(ftp,http...)
-        "bookmarks",
         "tabs",
-        "history"
+        "history",
+        "activeTab"
     ],
     "content_scripts": [{
         "matches": ["<all_urls>"],//匹配到所有的url地址是加载下面的脚本、样式
-        "css": ["mystyles.css"],
-        "js": ["test.js","jquery.min.js"],
+        "css": ["css/mystyles.css"],
+        "js": ["./pages/js/jquery.js","test.js"],
         "run_at":"document_end"
     }],
     "background": {
         "scripts": ["background.js"],
-        "persistent": false //使用事件页面
+        "persistent": true 
     }
 }
