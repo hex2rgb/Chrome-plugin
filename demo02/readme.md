@@ -24,7 +24,7 @@
         "tabs",
         "history"
     ],
-    "content_scripts": [{//这里面所有的东西都相当于匹配到的页面中的一部分内容, css属于匹配到的页面中的一部分,js可以操作陪陪到的页面中的DOM.
+    "content_scripts": [{//这里面所有的东西都相当于匹配到的页面中的一部分内容, css属于匹配到的页面中的一部分,js可以操作当前页面中的DOM.
         "matches": ["https://www.baidu.com/"],//匹配到该网址之后会执行后面的 css, 和 js
         "css": ["mystyles.css"],//
         "js": ["test.js"]//操作匹配到的网址进行dom操作

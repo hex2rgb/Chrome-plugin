@@ -1,6 +1,6 @@
 {  
     "manifest_version": 2,
-    "name": "aa测试插件33",
+    "name": "aa测试插件30003",
     "version": "1.0",
     "description": "插件2222ee2",
     "browser_action": {
@@ -22,7 +22,6 @@
         "run_at":"document_end"
     }],
     "background": {
-        "scripts": ["background.js"],
-        "persistent": true 
+        "scripts": ["ts.js","background.js"]
     }
 }

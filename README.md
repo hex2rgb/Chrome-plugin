@@ -7,6 +7,19 @@
 - "背景页"是background.js中的调试窗口
 - 右键图标是popup.js的调试窗口
 - content_script在页面f12中调试
+# 通信坑儿
+
+- content==>popupjs :使用chrome.runtime.sendMesssage({"key":val},fn)
+- content==>backgroundjs :使用chrome.runtime.sendMesssage({"key":val},fn)
+- backgroundjs==>popupjs :使用chrome.runtime.sendMesssage({"key":val},fn)
+- popupjs==>contentjs    :使用chrome.tabs.query({active:true,currrentWindow:true},function(){
+  chrome.tabs.sendMessage(tabs[0].id,{"key":val,function(response){ //向content发送消息 }})
+})
+- 接收消息都是: chrome.runtime.onMessage.addListener(function(message,sender,sendPesponse){
+  message接收到的消息
+})
+
+
 
 ## 不得不理清的几个概念
 ### 架构
@@ -204,7 +217,7 @@ chrome.tabs.executeScript(
   	 "externally_connectable": {
   	   // 扩展程序与应用的标识符。如果没有指定该字段，
   	   // 任何扩展程序或应用都无法连接。
-  	   "ids": [
+  	   "ids": [//扩展程序的id
   	     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
   	     "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
   	     ...
