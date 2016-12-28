@@ -1,0 +1,23 @@
+.onCollection{
+    width:100px;
+    height:40px;
+    border-radius: 100px 0 0 100px;
+    box-shadow: azure 2px 1px 1px 1px;
+    background-color: pink;
+    line-height:40px;
+    padding-left: 10px;
+    position: fixed;
+    right:0;
+    top:50%;
+    cursor: pointer;
+    z-index: 99999;
+}
+.collection{
+    position: absolute;
+    right:0;
+    top:0;
+    height: 600px;
+    width:300px;
+    border: 2px solid #000;
+    z-index: 99999;
+}
