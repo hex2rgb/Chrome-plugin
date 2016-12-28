@@ -1,0 +1,18 @@
+body {
+    /*border-radius: 100px;*/
+    /*background-color: rgba(0,0,0,0);*/
+}
+.popup{
+    border-radius: 10px;
+    /*background-color: lightgreen;*/
+}
+.popup li{
+    height:40px;
+    width: 200px;
+    line-height:50px;
+}
+
+.popup li:hover{
+    cursor: pointer;
+    background-color: #ccc;
+}
