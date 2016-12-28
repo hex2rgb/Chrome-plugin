@@ -21,7 +21,7 @@ chrome.runtime.onMessage.addListener(
             case "goToCollection": {
                 //在这里发送请求给background.js
                 chrome.runtime.sendMesssage({"status":"goToCollection"},function () {
-
+                    
                 })
 
                 break;

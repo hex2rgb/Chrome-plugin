@@ -7,8 +7,8 @@
 - "背景页"是background.js中的调试窗口
 - 右键图标是popup.js的调试窗口
 - content_script在页面f12中调试
-# 通信坑儿
 
+# 通信坑儿
 - content==>popupjs :使用chrome.runtime.sendMesssage({"key":val},fn)
 - content==>backgroundjs :使用chrome.runtime.sendMesssage({"key":val},fn)
 - backgroundjs==>popupjs :使用chrome.runtime.sendMesssage({"key":val},fn)
@@ -125,7 +125,7 @@ chrome.tabs.executeScript(
 
 ```
 
-- 这个是页面事件的注册方式,通过时间的方式去触发bg.js运行
+- 这个是页面事件的注册方式,通过事件的方式去触发bg.js运行
 
 ```
 {
@@ -142,7 +142,7 @@ chrome.tabs.executeScript(
 
 ## 小结 
 ### background页面
-- 有两种方式,一种是一直运行在后台(一直运行子啊内存中)
+- 有两种方式,一种是一直运行在后台(一直运行在内存中)
 - 另一种是通过事件触发
 
 
@@ -154,7 +154,7 @@ chrome.tabs.executeScript(
 - 可以引入jQuery并且使用
 
 # 乱七八糟的API
-- window.close();控制窗口打开关闭
+- window.close();控制弹出层窗口打开关闭
 
 # 关于页面交互逻辑
 
