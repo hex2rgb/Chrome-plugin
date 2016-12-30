@@ -19,7 +19,46 @@
   message接收到的消息
 })
 
+### background与contentjs相互通信
 
+- 扩展页面(background和popupjs都算扩展页面)发送给contentjs
+
+```
+
+//发送给contentjs
+  chrome.tabs.query(
+      {active: true, currentWindow: true},
+      function(tabs) {
+          console.log(tabs[0].id)
+          chrome.tabs.sendMessage(
+              tabs[0].id,
+              {status: "onCollection"},
+              function(response) {
+                  console.log(response.farewell);
+              });
+  });
+
+```
+
+- 
+
+```
+chrome.browserAction.onClicked.addListener(function(tab) {
+    alert("事件注册成功");
+    chrome.tabs.query(
+      {active: true, currentWindow: true},
+      function(tabs) {
+          chrome.tabs.sendMessage(
+              tabs[0].id,
+              {"bgStatus": "rmAd"},
+              function(response) {
+                  console.log("接收到contentjs的响应");
+              });
+  });
+
+});
+
+```
 
 ## 不得不理清的几个概念
 ### 架构

@@ -1,0 +1,20 @@
+{  
+    "manifest_version": 2,
+    "name": "测试插件",
+    "version": "1.0",
+    "description": "插件eeeee",
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+    "permissions": [
+        "http://*/",
+        "bookmarks",
+        "tabs",
+        "history"
+    ],
+    "content_scripts": [{
+        "matches": ["https://www.baidu.com/"],
+        "css": ["mystyles.css"],
+        "js": ["test.js"]
+    }]
+}
