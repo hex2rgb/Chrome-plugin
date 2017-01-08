@@ -1,0 +1,33 @@
+{  
+    "manifest_version": 2,
+    "name": "去广告插件",
+    "version": "1.0",
+    "description": "去广告插件",
+    "browser_action": {
+        "title":"点击去广告"
+    },
+    "minimum_chrome_version": "44.0.0.0",
+    "author": "Robert",
+    "permissions": [
+        "<all_urls>", 
+        "tabs",
+        "history",
+        "activeTab"
+    ],
+    "icons": {
+        "16": "icon/icon19-2.png",
+        "48": "icon/icon48-2.png",
+        "128": "icon/icon128-2.png"
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"], 
+        "css": ["css/mystyles.css"],
+        "js": ["./pages/js/jquery.js","content.js"],
+        "run_at":"document_start"
+    }],
+    "background": {
+        "scripts": ["background.js"],
+        "run_at":"document_start"
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
