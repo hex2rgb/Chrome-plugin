@@ -19,5 +19,8 @@
   "homepage": "https://github.com/ZichengYan/Chrome-plugin#readme",
   "dependencies": {
     "jquery": "^1.12.4"
+  },
+  "devDependencies": {
+    "gulp-rev": "^7.1.2"
   }
 }

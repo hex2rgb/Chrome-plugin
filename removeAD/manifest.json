@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "去广告插件",
     "version": "1.0",
-    "description": "去广告插件",
+    "description": "点击一下去广告",
     "browser_action": {
         "title":"点击去广告"
     },

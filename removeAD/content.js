@@ -38,12 +38,14 @@ function found(text) {
     var arr = [];
     $("*").each(function(index, val) {
         var src = $(val).attr("src");
-        var href=$(val).attr("target");
+        var target=$(val).attr("target");
         var style = $(val).attr("style");
-        if (href) {
+        //匹配到有target属性,删除父节点
+        /*if (target) {
+            if()
             arr.push(val);
             $(val).parent().remove();
-        }
+        }*/
         //匹配到src的时候判断是否有gif字段,当match的时候就删除;
         if (src && src.match(/.\gif/) && src.match(/.\gif/)[0]) arr.push(val);
         //匹配到含有close的src就模拟点击
